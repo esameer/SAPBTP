@@ -1,0 +1,44 @@
+<mvc:View xmlns:table="sap.ui.table" controllerName="student01.com.sap.training.ux402.masterdetail.ux402masterdetail.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:semantic="sap.m.semantic"
+    >
+<semantic:DetailPage id="_IDGenDetailPage1" navButtonPress="onNavBack" showNavButton="{device>/system/phone}">
+     <semantic:content>
+        <ObjectHeader id="_IDGenObjectHeader1" intro="{carrid}" title="{CARRNAME}">
+        <attributes>
+            <ObjectAttribute id="_IDGenObjectAttribute1" text="{CURRCODE}" title="{i18n>currencyTitle}"></ObjectAttribute>
+            <ObjectAttribute id="_IDGenObjectAttribute2" text="{URL}">  </ObjectAttribute>
+        </attributes>
+        </ObjectHeader>
+        <IconTabBar id="_IDGenIconTabBar1" class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter id="_IDGenIconTabFilter1" icon="sap-icon://flight">
+                    <content>
+                        <Table id="_IDGenTable1" headerText="{i18n>tableHeaderText}" items="{carrierFlights}" noDataText="{i18n>tableNoDataText}">
+                            <columns>
+                                <Column id="_IDGenColumn1">
+                                    <Text id="_IDGenText1" text="{i18n>idColumnText}"></Text>
+                                </Column>
+                                <Column id="_IDGenColumn2">
+                                    <Text id="_IDGenText2" text="{i18n>cityFromColumnText}"></Text>
+                                </Column>
+                                <Column id="_IDGenColumn3">
+                                    <Text id="_IDGenText3" text="{i18n>cityToColumnText}"></Text>
+                                </Column>
+                            </columns>
+                            <ColumnListItem id="_IDGenColumnListItem1">
+                                <cells>
+                                    <Text id="_IDGenText4" text="{carrid}"/>
+                                    <Text id="_IDGenText5" text="{flightDetails/cityFrom}"/>
+                                    <Text id="_IDGenText6" text="{flightDetails/cityTo}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </Table>
+                    </content>
+                    </IconTabFilter>
+                </items>
+        </IconTabBar>
+     </semantic:content>   
+</semantic:DetailPage>
+</mvc:View>

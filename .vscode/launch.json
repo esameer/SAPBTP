@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ux402_fullscreen-config1",
+            "cwd": "${workspaceFolder}/ux402_fullscreen",
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "args": [
+                "--open",
+                "index.html"
+            ],
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "outputCapture": "std",
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/SAPBTP/ux402_fullscreen\"}",
+                "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/sap\",\"url\":\"https://sapes5.sapdevcenter.com\",\"client\":\"002\",\"destination\":\"ES5\"}]",
+                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+            }
+        }
+    ]
+}

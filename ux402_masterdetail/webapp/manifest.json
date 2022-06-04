@@ -1,0 +1,171 @@
+{
+  "_version": "1.28.0",
+  "sap.app": {
+    "id": "student01.com.sap.training.ux402.masterdetail.ux402masterdetail",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap-ux/fiori-freestyle-writer:basic",
+      "version": "0.11.13",
+      "toolsId": "bfba0240-0744-4d1a-84e6-2673df41a16b"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/iwfnd/RMTSAMPLEFLIGHT/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.84.14",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "student01.com.sap.training.ux402.masterdetail.ux402masterdetail.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "student01.com.sap.training.ux402.masterdetail.ux402masterdetail.view",
+        "controlAggregation": "detailPages",
+        "controlId": "idApp",
+        "bypassed": {
+            "target":[
+                "master",
+                "notFound"
+            ]
+        }
+      },
+      "routes": [
+        {
+            "name": "master",
+            "pattern": "",
+            "target": [
+              "master",
+              "carrierdetails"
+            ]
+        },
+        {
+            "name": "carrierdetails",
+            "pattern": "carrierdetails/{objectId}",
+            "target": [
+              "master",
+              "carrierdetails"
+            ]
+        },
+        {
+          "name": "RouteMain",
+          "pattern": "RouteMain",
+          "target": [
+            "TargetMain"
+          ]
+        }
+      ],
+      "targets": {
+        "master":{
+            "viewId": "Master",
+            "viewType": "XML",
+            "viewLevel": 1,
+            "viewName": "Master",
+            "controlAggregation": "masterPages",
+            "transition":"slide",
+            "clearControlAggregation": true
+        },
+        "carrierdetails":{
+            "viewId": "carrierdetails",
+            "viewType": "XML",
+            "viewLevel": 2,
+            "viewName": "Detail",
+            "transition":"slide",
+            "clearControlAggregation": true
+        },
+        "notFound":{
+            "viewId": "notFound",
+            "viewType": "XML",
+            "viewName": "NotFound",
+            "transition":"slide"
+        },
+        "detailObjectNotFound":{
+            "viewId": "detailObjectNotFound",
+            "viewType": "XML",
+            "viewName": "DetailObjectNotFound",
+            "transition":"slide"
+        },
+        "TargetMain": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Main",
+          "viewName": "Main"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "student01.com.sap.training.ux402.masterdetail.ux402masterdetail.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

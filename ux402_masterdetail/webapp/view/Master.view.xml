@@ -1,0 +1,28 @@
+<mvc:View controllerName="student01.com.sap.training.ux402.masterdetail.ux402masterdetail.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:semantic="sap.m.semantic"
+    xmlns="sap.m">
+
+    <semantic:MasterPage id="semMaster" title="{i18n>masterTitle}" >
+        <semantic:content>
+            <List id="list"
+                    items="{/CarrierCollection}"
+                    busyIndicatorDelay="0"
+                    growing="true"
+                    growingThreshold="10"
+                    growingScrollToLoad="true"
+                    mode="{=${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
+                    selectionChange="onSelect">
+                    <items>
+                        <ObjectListItem id="_IDGenObjectListItem1" 
+                                        title="{CARRNAME}"
+                                        intro="{carrid}"
+                                        type="{=${device>system/phone} ? 'Active' : 'Inactive'}"
+                                        press="onSelect" >       
+                        </ObjectListItem>
+                    </items>
+            </List>
+        </semantic:content>
+    </semantic:MasterPage>
+
+</mvc:View>

@@ -1,0 +1,58 @@
+<mvc:View controllerName="student31.com.sap.training.ux402.fullscreen.ux402fullscreen.controller.Flights"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout">
+    <Page id="_IDGenPage1" navButtonPress="onNavBack" showNavButton="true" title="{CARRNAME}">
+    <content>
+        <l:VerticalLayout id="_IDGenVerticalLayout1" >
+            <ObjectHeader id="_IDGenObjectHeader1" title="{CARRNAME}" number="" numberUnit="{CURRCODE}" titleHref="{URL}">
+                <attributes>
+                    <ObjectAttribute id="_IDGenObjectAttribute1" text="{carrid}"></ObjectAttribute>
+                    <ObjectAttribute id="_IDGenObjectAttribute2" text="{URL}"></ObjectAttribute>
+                </attributes>
+            </ObjectHeader>
+            <Table id="idFlights" items="{path: 'carrierFlights', sorter:{ path: 'carrid'}}"
+             mode="SingleSelectMaster" growing="true" growingThreshold="10">
+                <headerToolbar>
+                    <Toolbar id="_IDGenToolbar1" >
+                        <Title id="_IDGenTitle1" text="Flights" level="H2">
+                        
+                        </Title>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="_IDGenColumn1" >
+                        <Text id="_IDGenText1" text="{i18n>carriername}"></Text>
+                    </Column>
+                    <Column id="_IDGenColumn2" >
+                        <Text id="_IDGenText2" text="{i18n>flightno}"></Text>
+                    </Column>
+                    <Column id="_IDGenColumn3" >
+                        <Text id="_IDGenText3" text="{i18n>flightdate}"></Text>
+                    </Column>
+                    <Column id="_IDGenColumn4" >
+                        <Text id="_IDGenText4" text="{i18n>seatmax}"></Text>
+                    </Column>
+                    <Column id="_IDGenColumn5" >
+                        <Text id="_IDGenText5" text="{i18n>seatoc}"></Text>
+                    </Column>
+                </columns>
+                <items>
+                <ColumnListItem id="_IDGenColumnListItem1" >
+                    <cells>
+                        <ObjectIdentifier id="_IDGenObjectIdentifier1" title="{carrid}" text="{carrid}">
+                        </ObjectIdentifier>
+                        <Text id="_IDGenText6" text="{connid}"></Text>
+                        <Text id="_IDGenText7" text="{path: 'fldate' , type: 'sap.ui.model.type.Date'}"></Text>
+                        <Text id="_IDGenText8" text="{SEATSMAX}"></Text>
+                        <Text id="_IDGenText9" text="{SEATSOCC}"></Text>
+                    </cells>
+                </ColumnListItem>
+                </items>
+            </Table>
+        </l:VerticalLayout>
+    </content>
+    </Page>
+
+
+</mvc:View>
