@@ -1,0 +1,16 @@
+<mvc:View controllerName="student31.com.sap.training.ux402.opa.ux402opa.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <headerContent>
+        <Button id="headerButton" text="Header Button"></Button>
+    </headerContent>
+        <content>
+            <Label id="_IDGenLabel1" text="FirstName"></Label>
+            <Input id="_IDGenInput1" value="John"></Input>
+            <Label id="_IDGenLabel2" text="LastName"></Label>
+            <Input id="_IDGenInput2" value="Johnson"></Input>
+                <Button id="helloButton" text="Press me" press="onPress"></Button>
+        </content>
+    </Page>
+</mvc:View>
