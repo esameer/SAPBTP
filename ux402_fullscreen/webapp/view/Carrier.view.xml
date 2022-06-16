@@ -1,7 +1,7 @@
 <mvc:View xmlns:table="sap.ui.table" controllerName="student31.com.sap.training.ux402.fullscreen.ux402fullscreen.controller.Carrier"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>overviewPageTitle}">
+    <Page id="CarrierPage" title="{i18n>overviewPageTitle}">
         <content>
             <Table id="_IDGenTable1" items="{/CarrierCollection}">
                 <columns>
@@ -13,7 +13,7 @@
                     </Column>
                 </columns>
                 <items>
-                    <ColumnListItem id="_IDGenColumnListItem1" press="onPress" type="Navigation">
+                    <ColumnListItem id="CarrierItem" press="onPress" type="Navigation">
                         <cells>
                             <ObjectIdentifier id="_IDGenObjectIdentifier1" title="{carrid}"></ObjectIdentifier>
                             <Text id="_IDGenText3" text="{CARRNAME}"></Text>

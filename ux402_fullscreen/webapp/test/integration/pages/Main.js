@@ -2,7 +2,7 @@ sap.ui.define([
 	"sap/ui/test/Opa5"
 ], function (Opa5) {
 	"use strict";
-	var sViewName = "Main";
+	var sViewName = "App";
 	Opa5.createPageObjects({
 		onTheAppPage: {
 
@@ -19,7 +19,22 @@ sap.ui.define([
 						},
 						errorMessage: "Did not find the " + sViewName + " view"
 					});
-				}
+				},
+
+                iShouldSeeTheFlightsPage: function () {
+                    return this.waitFor({
+                        id: new RegExp("CarrierItem"),
+                        viewName: "Carrier",
+                        success: function (oCarrierItem) {
+                            oCarrierItem[0].$().trigger("press");
+                            Opa5.assert.ok(true, "The " + oCarrierItem[0].getId() + " is pressed" );
+                        },
+                        errorMessage: "Could not find any carrier",
+                        timeout:3
+                    });
+                    
+                }
+
 			}
 		}
 	});

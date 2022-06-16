@@ -14,7 +14,7 @@ sap.ui.define([
 
 		// Assertions
 		Then.onTheAppPage.iShouldSeeTheApp();
-
+        Then.onTheAppPage.iShouldSeeTheFlightsPage();
 		//Cleanup
 		Then.iTeardownMyApp();
 	});
